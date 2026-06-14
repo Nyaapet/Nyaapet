@@ -13,10 +13,19 @@
     "windows": [
       {
         "title": "nyaapet",
-        "width": 800,
-        "height": 600
+        "label": "main",
+        "width": 320,
+        "height": 420,
+        "transparent": true,
+        "decorations": false,
+        "alwaysOnTop": true,
+        "resizable": false,
+        "shadow": false,
+        "skipTaskbar": true,
+        "center": false
       }
     ],
+    "macOSPrivateApi": true,
     "security": {
       "csp": null
     }
