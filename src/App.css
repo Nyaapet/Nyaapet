@@ -25,18 +25,31 @@ body,
   height: 100vh;
 }
 
-/* 朝向翻转的容器:散步时按方向水平翻转整块画布 */
 .pet-wrap {
   width: 100%;
   height: 100%;
-  transition: transform 0.15s ease;
 }
 
-.live2d-host,
-.live2d-canvas {
-  display: block;
+.sprite-host {
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.sprite-pet {
+  display: block;
+  width: min(88vw, 220px);
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  pointer-events: none;
+  -webkit-user-drag: none;
+  image-rendering: auto;
 }
 
 /* ---------- 气泡 ---------- */
@@ -47,6 +60,7 @@ body,
   transform: translateX(-50%);
   z-index: 10;
   max-width: 180px;
+  box-sizing: border-box;
   padding: 6px 12px;
   background: #fff;
   color: #333;
@@ -54,6 +68,8 @@ body,
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   animation: pop 0.18s ease;
 }
 .bubble::after {
@@ -120,7 +136,7 @@ body,
 .menu__sep {
   height: 1px;
   margin: 2px 6px;
-  padding: 0;
+  padding: 0 !important;
   background: #eee;
   cursor: default;
 }

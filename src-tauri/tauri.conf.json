@@ -14,8 +14,8 @@
       {
         "title": "nyaapet",
         "label": "main",
-        "width": 320,
-        "height": 420,
+        "width": 240,
+        "height": 300,
         "transparent": true,
         "decorations": false,
         "alwaysOnTop": true,
